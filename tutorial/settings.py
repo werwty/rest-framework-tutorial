@@ -38,13 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_openapi',
+    'tutorial',
+
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAdminUser',
+        #'rest_framework.permissions.IsAdminUser',
     ],
-    'PAGE_SIZE': 10
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+
 }
 
 MIDDLEWARE = [
